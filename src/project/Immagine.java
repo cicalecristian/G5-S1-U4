@@ -9,6 +9,10 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
         this.luminosita = luminosita;
     }
 
+    public int getLuminosita() {
+        return luminosita;
+    }
+
     @Override
     public void aumentaLuminosita() {
         if (luminosita < 15) {

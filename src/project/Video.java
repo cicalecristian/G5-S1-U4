@@ -9,6 +9,10 @@ public class Video extends Riproducibile implements Luminosita {
         this.luminosita = luminosita;
     }
 
+    public int getLuminosita() {
+        return luminosita;
+    }
+
     @Override
     public void abbassaVolume() {
         if (volume > 0) {

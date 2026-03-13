@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ElementoMultimediale[] elementi = new ElementoMultimediale[2];
+        ElementoMultimediale[] elementi = new ElementoMultimediale[5];
 
         for (int i = 0; i < elementi.length; i++) {
             System.out.println("Che tipo di elemento vuoi creare?");
@@ -58,12 +58,11 @@ public class Main {
 
         System.out.println("Visualizzazione degli elementi:");
         for (ElementoMultimediale e : elementi) {
-            switch (e) {
-                case Riproducibile r -> r.play();
-                case Immagine img -> img.show();
-                default -> throw new IllegalStateException("Unexpected value: " + e);
+            if (e instanceof Riproducibile r) {
+                r.play();
+            } else if (e instanceof Immagine img) {
+                img.show();
             }
-
             System.out.println();
         }
 
@@ -91,5 +90,25 @@ public class Main {
         }
 
         scanner.close();
+
+        // Test Video
+//        Video v = new Video("Film", 10, 3, 5);
+//        v.alzaVolume();
+//        System.out.println("Volume attuale: " + v.getVolume());
+//        v.aumentaLuminosita();
+//        v.play();
+//        System.out.println("Luminosità attuale: " + v.getLuminosita());
+//
+//        // Test Audio
+//        RegistrazioneAudio a = new RegistrazioneAudio("Canzone", 5, 2);
+//        a.abbassaVolume();
+//        a.play();
+//        System.out.println("Luminosità attuale: " + a.getVolume());
+//
+//        // Test Immagine
+//        Immagine img = new Immagine("Foto", 7);
+//        img.aumentaLuminosita();
+//        img.show();
+//        System.out.println("lum attuale: " + img.getLuminosita());
     }
 }
