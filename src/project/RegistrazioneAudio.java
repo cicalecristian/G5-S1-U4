@@ -7,17 +7,12 @@ public class RegistrazioneAudio extends Riproducibile {
     }
 
     @Override
-    public void play() {
-
-    }
-
-    @Override
     public void abbassaVolume() {
-
+        if (volume < 15) volume--;
     }
 
     @Override
-    public void alzaVoume() {
-
+    public void alzaVolume() {
+        if (volume > 0) volume++;
     }
 }

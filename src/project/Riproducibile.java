@@ -10,9 +10,13 @@ public abstract class Riproducibile extends ElementoMultimediale {
         this.volume = volume;
     }
 
-    public abstract void play();
+    public void play() {
+        for (int i = 0; i < durata; i++) {
+            System.out.println(getTitolo() + "!".repeat(volume));
+        }
+    }
 
     public abstract void abbassaVolume();
 
-    public abstract void alzaVoume();
+    public abstract void alzaVolume();
 }
