@@ -30,7 +30,8 @@ public class Video extends Riproducibile implements Luminosita {
     }
 
     @Override
-    public void setLuminosita() {
+    public void play() {
+        super.play();
         System.out.println("Luminosità: " + "*".repeat(luminosita));
     }
 }
