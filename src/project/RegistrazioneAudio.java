@@ -8,11 +8,19 @@ public class RegistrazioneAudio extends Riproducibile {
 
     @Override
     public void abbassaVolume() {
-        if (volume < 15) volume--;
+        if (volume > 0) {
+            volume--;
+        } else {
+            System.out.println("valore non compreso nel range richiesto!");
+        }
     }
 
     @Override
     public void alzaVolume() {
-        if (volume > 0) volume++;
+        if (volume < 15) {
+            volume++;
+        } else {
+            System.out.println("valore non compreso nel range richiesto!");
+        }
     }
 }

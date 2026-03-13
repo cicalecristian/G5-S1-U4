@@ -11,17 +11,23 @@ public class Immagine extends ElementoMultimediale implements Luminosita {
 
     @Override
     public void aumentaLuminosita() {
-        if (luminosita < 15) luminosita++;
+        if (luminosita < 15) {
+            luminosita++;
+        } else {
+            System.out.println("valore non compreso nel range richiesto!");
+        }
     }
 
     @Override
     public void diminuisciLuminosita() {
-        if (luminosita > 0) luminosita--;
+        if (luminosita > 0) {
+            luminosita--;
+        } else {
+            System.out.println("valore non compreso nel range richiesto!");
+        }
     }
 
     public void show() {
-        for (int i = 0; i < luminosita; i++) {
-            System.out.println(getTitolo() + "*".repeat(luminosita));
-        }
+        System.out.println(getTitolo() + " " + "*".repeat(luminosita));
     }
 }
